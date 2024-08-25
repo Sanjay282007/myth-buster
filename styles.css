@@ -2,12 +2,12 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 20px;
-    background-color: #f4f4f4;
+    background-color: #e0f7fa; /* Light cyan background */
 }
 
 h1 {
     text-align: center;
-    color: #333;
+    color: #00796b; /* Dark teal color */
 }
 
 #search {
@@ -16,6 +16,8 @@ h1 {
     padding: 10px;
     margin-bottom: 20px;
     font-size: 16px;
+    border: 1px solid #00796b;
+    border-radius: 5px;
 }
 
 #myths-list {
@@ -25,7 +27,7 @@ h1 {
 }
 
 .myth {
-    background-color: #fff;
+    background-color: #ffffff;
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -33,10 +35,78 @@ h1 {
 
 .myth h2 {
     margin-top: 0;
-    color: #007BFF;
+    color: #00796b;
 }
 
 .myth p {
     margin: 10px 0 0;
     color: #555;
+}
+
+.quiz-link {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.quiz-link a {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #00796b;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.quiz-link a:hover {
+    background-color: #004d40;
+}
+
+#quiz {
+    margin-top: 40px;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#quiz h2 {
+    margin-top: 0;
+    color: #00796b;
+}
+
+#quiz p {
+    color: #333;
+}
+
+#quiz-result {
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+#timer {
+    text-align: center;
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: #d32f2f; /* Red color for timer */
+}
+
+.correct {
+    background-color: #c8e6c9; /* Light green background */
+    animation: correctAnimation 1s ease-in-out;
+}
+
+.incorrect {
+    background-color: #ffcdd2; /* Light red background */
+    animation: incorrectAnimation 1s ease-in-out;
+}
+
+@keyframes correctAnimation {
+    0% { background-color: #ffffff; }
+    100% { background-color: #c8e6c9; }
+}
+
+@keyframes incorrectAnimation {
+    0% { background-color: #ffffff; }
+    100% { background-color: #ffcdd2; }
 }
