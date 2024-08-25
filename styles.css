@@ -110,3 +110,19 @@ h1 {
     0% { background-color: #ffffff; }
     100% { background-color: #ffcdd2; }
 }
+
+button {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: #00796b;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #004d40;
+}
