@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Software Engineering Myth Buster</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Software Engineering Myths</h1>
+    <input type="text" id="search" placeholder="Search myths...">
+    <div id="myths-list">
+        <div class="myth">
+            <h2>Agile development is faster than traditional methods</h2>
+            <p>Agile focuses on iterative development, which can lead to faster delivery of small increments, but it doesn't necessarily mean the overall project is completed faster.</p>
+        </div>
+        <div class="myth">
+            <h2>More code means better software</h2>
+            <p>Quality over quantity. More code can lead to more bugs and maintenance issues. Efficient and clean code is preferable.</p>
+        </div>
+        <div class="myth">
+            <h2>Software development is just coding</h2>
+            <p>Software development involves planning, designing, testing, and maintenance, not just coding.</p>
+        </div>
+        <div class="myth">
+            <h2>Once the software is built, the job is done</h2>
+            <p>Software requires ongoing maintenance, updates, and support after its initial release.</p>
+        </div>
+        <!-- Add more myths here -->
+    </div>
+    <script>
+        document.getElementById('search').addEventListener('input', function() {
+            let filter = this.value.toUpperCase();
+            let myths = document.getElementsByClassName('myth');
+            for (let i = 0; i < myths.length; i++) {
+                let title = myths[i].getElementsByTagName('h2')[0];
+                if (title.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                    myths[i].style.display = "";
+                } else {
+                    myths[i].style.display = "none";
+                }
+            }
+        });
+    </script>
+</body>
+</html>
