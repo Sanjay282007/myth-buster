@@ -1,227 +1,197 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Software Engineering Myth Buster Quiz</title>
-    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .quiz-question {
+            margin-bottom: 20px;
+        }
+
+        .button-link {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .button-link:hover {
+            background-color: #0056b3;
+        }
+
+        #timer {
+            margin-bottom: 20px;
+        }
+
+        #results {
+            display: none;
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
 </head>
 <body>
     <h1>Software Engineering Myth Buster Quiz</h1>
     <div id="timer">Time left: <span id="time">300</span> seconds</div>
     <form id="quiz-form">
+        <!-- Quiz Questions Here -->
+        <!-- Questions are the same as before -->
         <div class="quiz-question">
-            <p>1. Which of the following statements is true about Agile development?</p>
+            <p>1. Agile development is faster than traditional methods</p>
             <label>
                 <input type="radio" name="question1" value="a">
-                Agile development always completes projects faster than traditional methods.
+                True
             </label><br>
             <label>
                 <input type="radio" name="question1" value="b">
-                Agile development focuses on iterative and incremental delivery.
-            </label><br>
-            <label>
-                <input type="radio" name="question1" value="c">
-                Agile development does not require any planning.
-            </label><br>
-            <label>
-                <input type="radio" name="question1" value="d">
-                Agile development is only suitable for small projects.
+                False
             </label>
         </div>
         <div class="quiz-question">
-            <p>2. What is a common misconception about more code?</p>
+            <p>2. More code means better software</p>
             <label>
                 <input type="radio" name="question2" value="a">
-                More code means better software.
+                True
             </label><br>
             <label>
                 <input type="radio" name="question2" value="b">
-                More code can lead to more bugs and maintenance issues.
-            </label><br>
-            <label>
-                <input type="radio" name="question2" value="c">
-                More code is always more efficient.
-            </label><br>
-            <label>
-                <input type="radio" name="question2" value="d">
-                More code is easier to manage.
+                False
             </label>
         </div>
         <div class="quiz-question">
-            <p>3. What does software development involve besides coding?</p>
+            <p>3. Software development is just coding</p>
             <label>
                 <input type="radio" name="question3" value="a">
-                Only coding.
+                True
             </label><br>
             <label>
                 <input type="radio" name="question3" value="b">
-                Planning, designing, testing, and maintenance.
-            </label><br>
-            <label>
-                <input type="radio" name="question3" value="c">
-                Just testing.
-            </label><br>
-            <label>
-                <input type="radio" name="question3" value="d">
-                Only designing.
+                False
             </label>
         </div>
         <div class="quiz-question">
-            <p>4. What happens after the initial release of software?</p>
+            <p>4. Once the software is built, the job is done</p>
             <label>
                 <input type="radio" name="question4" value="a">
-                The job is done.
+                True
             </label><br>
             <label>
                 <input type="radio" name="question4" value="b">
-                Ongoing maintenance, updates, and support are required.
-            </label><br>
-            <label>
-                <input type="radio" name="question4" value="c">
-                No further action is needed.
-            </label><br>
-            <label>
-                <input type="radio" name="question4" value="d">
-                The software is discarded.
+                False
             </label>
         </div>
         <div class="quiz-question">
-            <p>5. Is Agile development suitable for large projects?</p>
+            <p>5. Software development is a solitary activity</p>
             <label>
                 <input type="radio" name="question5" value="a">
-                No, it is only suitable for small projects.
+                True
             </label><br>
             <label>
                 <input type="radio" name="question5" value="b">
-                Yes, it can be scaled for large projects.
-            </label><br>
-            <label>
-                <input type="radio" name="question5" value="c">
-                It depends on the team size.
-            </label><br>
-            <label>
-                <input type="radio" name="question5" value="d">
-                It is not suitable for any projects.
+                False
             </label>
         </div>
         <div class="quiz-question">
-            <p>6. What is a common myth about software testing?</p>
+            <p>6. The latest technology is always the best choice</p>
             <label>
                 <input type="radio" name="question6" value="a">
-                Testing is only done at the end of the development process.
+                True
             </label><br>
             <label>
                 <input type="radio" name="question6" value="b">
-                Testing is an ongoing process throughout development.
-            </label><br>
-            <label>
-                <input type="radio" name="question6" value="c">
-                Testing is not necessary.
-            </label><br>
-            <label>
-                <input type="radio" name="question6" value="d">
-                Testing is only for finding bugs.
+                False
             </label>
         </div>
         <div class="quiz-question">
-            <p>7. What is a misconception about software documentation?</p>
+            <p>7. Software can be completely bug-free</p>
             <label>
                 <input type="radio" name="question7" value="a">
-                Documentation is not important.
+                True
             </label><br>
             <label>
                 <input type="radio" name="question7" value="b">
-                Documentation is crucial for understanding and maintaining software.
-            </label><br>
-            <label>
-                <input type="radio" name="question7" value="c">
-                Documentation is only needed for large projects.
-            </label><br>
-            <label>
-                <input type="radio" name="question7" value="d">
-                Documentation can be skipped if the code is well-written.
+                False
             </label>
         </div>
         <div class="quiz-question">
-            <p>8. What is a myth about software project deadlines?</p>
+            <p>8. Open source software is not secure</p>
             <label>
                 <input type="radio" name="question8" value="a">
-                Deadlines are always met without any issues.
+                True
             </label><br>
             <label>
                 <input type="radio" name="question8" value="b">
-                Deadlines can be flexible and may change based on project needs.
-            </label><br>
-            <label>
-                <input type="radio" name="question8" value="c">
-                Deadlines are never met.
-            </label><br>
-            <label>
-                <input type="radio" name="question8" value="d">
-                Deadlines are not important.
+                False
             </label>
         </div>
         <div class="quiz-question">
-            <p>9. What is a common myth about software engineers?</p>
+            <p>9. Adding more developers to a late project will speed it up</p>
             <label>
                 <input type="radio" name="question9" value="a">
-                Software engineers only write code.
+                True
             </label><br>
             <label>
                 <input type="radio" name="question9" value="b">
-                Software engineers are involved in various aspects of development, including design and testing.
-            </label><br>
-            <label>
-                <input type="radio" name="question9" value="c">
-                Software engineers do not need to communicate with others.
-            </label><br>
-            <label>
-                <input type="radio" name="question9" value="d">
-                Software engineers do not need to understand the business side of projects.
+                False
             </label>
         </div>
         <div class="quiz-question">
-            <p>10. What is a misconception about software development costs?</p>
+            <p>10. Software performance issues can always be fixed later</p>
             <label>
                 <input type="radio" name="question10" value="a">
-                Software development is always cheap.
+                True
             </label><br>
             <label>
                 <input type="radio" name="question10" value="b">
-                Software development can be expensive due to the complexity and resources required.
-            </label><br>
-            <label>
-                <input type="radio" name="question10" value="c">
-                Software development costs are always predictable.
-            </label><br>
-            <label>
-                <input type="radio" name="question10" value="d">
-                Software development costs are not important.
+                False
             </label>
         </div>
-        <button type="button" onclick="submitQuiz()">Submit</button>
+        <button type="button" id="submit-btn" class="button-link">Submit</button>
     </form>
     <script>
-        const correctAnswers = {
-            question1: 'b',
-            question2: 'b',
-            question3: 'b',
-            question4: 'b',
-            question5: 'b',
-            question6: 'b',
-            question7: 'b',
-            question8: 'b',
-            question9: 'b',
-            question10: 'b'
-        };
+        document.getElementById('submit-btn').addEventListener('click', function() {
+            let score = 0;
+            const correctAnswers = {
+                question1: 'b',
+                question2: 'b',
+                question3: 'b',
+                question4: 'b',
+                question5: 'b',
+                question6: 'b',
+                question7: 'b',
+                question8: 'b',
+                question9: 'b',
+                question10: 'b'
+            };
 
-        const explanations = {
-            question1: 'Agile development focuses on iterative and incremental delivery.',
-            question2: 'More code can lead to more bugs and maintenance issues.',
-            question3: 'Software development involves planning, designing, testing, and maintenance.',
-            question4: 'Ongoing maintenance, updates, and support are required after the initial release.',
-            question5: 'Agile development can be scaled for large projects.',
-            question6: 'Testing is an ongoing process throughout development.',
-            question7: 'Documentation is crucial for understanding and maintaining software.',
-            question
+            for (let question in correctAnswers) {
+                let selectedOption = document.querySelector(`input[name="${question}"]:checked`);
+                if (selectedOption && selectedOption.value === correctAnswers[question]) {
+                    score++;
+                }
+            }
+
+            // Store the result in localStorage and redirect to result page
+            localStorage.setItem('quizScore', score);
+            window.location.href = 'result.html';
+        });
+    </script>
+</body>
+</html>
