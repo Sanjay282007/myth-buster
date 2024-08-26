@@ -1,70 +1,52 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quiz Results</title>
-    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #007bff;
+        }
+
+        .button-link {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .button-link:hover {
+            background-color: #0056b3;
+        }
+    </style>
 </head>
 <body>
     <h1>Quiz Results</h1>
-    <div id="results"></div>
-    <button onclick="tryAgain()">Try Again</button>
+    <div id="results">
+        <p>Your score is: <span id="score">0</span>/10</p>
+        <a href="quiz.html" class="button-link">Take the Quiz Again</a>
+        <a href="index.html" class="button-link">Back to Myths</a>
+    </div>
     <script>
-        const correctAnswers = {
-            question1: 'b',
-            question2: 'b',
-            question3: 'b',
-            question4: 'b',
-            question5: 'b',
-            question6: 'b',
-            question7: 'b',
-            question8: 'b',
-            question9: 'b',
-            question10: 'b'
+        window.onload = function() {
+            const score = localStorage.getItem('quizScore');
+            document.getElementById('score').textContent = score ? score : '0';
+            localStorage.removeItem('quizScore');
         };
-
-        const explanations = {
-            question1: 'Agile development focuses on iterative and incremental delivery.',
-            question2: 'More code can lead to more bugs and maintenance issues.',
-            question3: 'Software development involves planning, designing, testing, and maintenance.',
-            question4: 'Ongoing maintenance, updates, and support are required after the initial release.',
-            question5: 'Agile development can be scaled for large projects.',
-            question6: 'Testing is an ongoing process throughout development.',
-            question7: 'Documentation is crucial for understanding and maintaining software.',
-            question8: 'Deadlines can be flexible and may change based on project needs.',
-            question9: 'Software engineers are involved in various aspects of development, including design and testing.',
-            question10: 'Software development can be expensive due to the complexity and resources required.'
-        };
-
-        function displayResults() {
-            const urlParams = new URLSearchParams(window.location.search);
-            let score = 0;
-            let resultsHtml = '<h2>Your Score</h2><ul>';
-
-            for (let i = 1; i <= 10; i++) {
-                const question = `question${i}`;
-                const userAnswer = urlParams.get(question);
-                const correctAnswer = correctAnswers[question];
-                const explanation = explanations[question];
-
-                if (userAnswer === correctAnswer) {
-                    score++;
-                    resultsHtml += `<li class="correct">Question ${i}: Correct! ${explanation}</li>`;
-                } else {
-                    resultsHtml += `<li class="incorrect">Question ${i}: Incorrect. ${explanation}</li>`;
-                }
-            }
-
-            resultsHtml += `</ul><h2>Total Score: ${score}/10</h2>`;
-            document.getElementById('results').innerHTML = resultsHtml;
-        }
-
-        function tryAgain() {
-            window.location.href = 'quiz.html';
-        }
-
-        window.onload = displayResults;
     </script>
 </body>
 </html>
